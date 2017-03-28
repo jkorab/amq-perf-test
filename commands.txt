@@ -1,0 +1,7 @@
+# https://activemq.apache.org/activemq-performance-module-users-manual.html
+
+mvn activemq-perf:producer -Dfactory.brokerURL="failover:(tcp://127.0.0.1:61616)" -Dproducer.deliveryMode=persistent -Dproducer.destName=queue://football -DsysTest.clientPrefix=fp
+
+mvn activemq-perf:consumer -Dfactory.brokerURL="failover:(tcp://127.0.0.1:61616)" -Dconsumer.destName=queue://football -DsysTest.clientPrefix=fc -DsysTest.numClients=3
+
+
